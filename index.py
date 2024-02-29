@@ -9,7 +9,6 @@ load_dotenv('.env')
 app = Flask(__name__)
 
 # MongoDB connection
-#client = MongoClient('mongodb+srv://11230316a:Kungu.maitu3@cluster0.sc7s21e.mongodb.net/')
 client = MongoClient(os.getenv('MONGO_CONNECTION_STRING'))
 db = client.EABL2
 Liqour_collection = db.LIQOUR
