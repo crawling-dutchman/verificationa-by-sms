@@ -1,16 +1,16 @@
 {
-  "version": 2,
-  "routes": [
-      {
-          "src": "/(.*)",
-          "dest": "/index.py"
-      }
-  ],
-  "builds": [
-      {
-          "src": "/index.py",
-          "use": "@now/python",
-          "config": { "maxLambdaSize": "15mb", "pythonVersion": "3.9" }
-      }
-  ]
+    "version": 2,
+    "routes": [
+        {
+            "src": "/(.*)",
+            "dest": "/index.py"
+        }
+    ],
+    "builds": [
+        {
+            "src": "/index.py",
+            "use": "@vercel/python",
+            "config": { "maxLambdaSize": "15mb", "pythonVersion": "3.9" }
+        }
+    ]
 }
