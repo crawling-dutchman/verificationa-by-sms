@@ -10,8 +10,8 @@ app = Flask(__name__)
 
 # MongoDB connection.
 #client = MongoClient('mongodb+srv://11230316a:Kungu.maitu3@cluster0.sc7s21e.mongodb.net/')
-client = MongoClient(os.getenv('MONGO_CONNECTION_STRING'))
-db = client.EABL2
+uri = os.getenv('URI')
+client = MongoClient(URI, server_api=ServerApi('1'))db = client.EABL2
 Liqour_collection = db.LIQOUR
 ###########################################
 global the_response 
@@ -21,7 +21,7 @@ account_sid = os.getenv('TWILIO_ACCOUNT_SID')
 auth_token = os.getenv('TWILIO_AUTH_TOKEN')
 twilio_phone_number = os.getenv('TWILIO_PHONE_NUMBER')
 #############################################
-specifi_phone_number = "+254718613062"
+
 
 
 @app.route('/Liqour', methods=['GET'])
@@ -39,8 +39,7 @@ def get_Liqour():
 @app.route('/Verification-code', methods=['GET', 'POST'])
 def get_VerificationCode():
     #customer_code = "5389XPIF1198"
-    #incoming_message = request.form['Body']
-    incoming_message = "9762CGPE6980"
+    incoming_message = request.form['Body']
 
 
     projection1 = {'Verification-code': 1, '_id': 0}
