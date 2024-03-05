@@ -2,6 +2,8 @@ from flask import Flask, request, jsonify
 from pymongo import MongoClient
 from twilio.twiml.messaging_response import MessagingResponse
 from dotenv import load_dotenv
+from pymongo.server_api import ServerApi
+
 import os
 load_dotenv('.env')
 
