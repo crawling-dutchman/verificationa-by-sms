@@ -11,7 +11,8 @@ app = Flask(__name__)
 # MongoDB connection.
 #client = MongoClient('mongodb+srv://11230316a:Kungu.maitu3@cluster0.sc7s21e.mongodb.net/')
 uri = os.getenv('URI')
-client = MongoClient(URI, server_api=ServerApi('1'))db = client.EABL2
+client = MongoClient(URI, server_api=ServerApi('1'))
+db = client.EABL2
 Liqour_collection = db.LIQOUR
 ###########################################
 global the_response 
